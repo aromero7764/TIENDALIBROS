@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset=<?= APP_CHARSET ?> >
+  <title>Tienda de Libros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php Tag::css('bulma.min') ?>
+  <?= Html::includeCss() ?>
+  
+</head>
+
+<body>
+
+<header>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+<div class="navbar-brand">
+          <a class="navbar-item" href="#">Administrar Libreria</a>
+          <a class="navbar-item" href="#">Inicio</a>
+          <a class="navbar-item" href="#">libros</a>
+          <a class="navbar-item" href="<?= PUBLIC_PATH . 'servicios/logout' ?>">Cerrar</a>
+          <a class="navbar-item" href="<?= PUBLIC_PATH . 'inicio' ?>">Volver al sitio web</a>
+      </div>
+  </nav>
+
+</header>
+ 
+ 
+</body>
+ <?php View::content() ?>
+  <?php View::partial('kumbia/footer') ?>
+
+</html>

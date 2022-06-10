@@ -1,0 +1,58 @@
+
+
+
+<div class="columns">
+    <div class="column">
+        <h2 class="is-size-2">Libros en la base de Datos</h2>
+        <a class="button is-success" href="#">Nuevo&nbsp;<i class="fa fa-plus"></i></a>
+        <table class="table is-hoverable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+            <?php foreach($listLibros->items as $item) : ?>    
+            <tr>
+                
+                    <th><?= $item->id; ?>
+                   
+                    </th>
+                    <th><?= $item->nombrelib; ?></th>
+                    <th><?= $item->price; ?></th>
+                    <th><?= $item->imagen; ?></th>
+                    <th>
+                        <button class="button small is-danger is-light"  type="submit" value="Editar">Editar</button>
+                        <input class="button small is-primary is-light" type="reset" value="Eliminar"> 
+                    </th>
+                    
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="content">
+  <?php View::content() ?> 
+  <h3>Menús</h3>
+  <ul>
+  <?php foreach($listLibros->items as $item) : ?> 
+  <li>
+      <?= Html::linkAction("edit/$item->id/", 'Editar') ?> 
+      <?= Html::linkAction("del/$item->id/", 'Borrar') ?> 
+      <strong><?= $item->nombrelib ?> - <?= $item->price ?></strong>
+  </li>
+  <?php endforeach ?>
+  </ul>
+  
+   // ejemplo manual de paginado, existen partials listos en formato digg, clasic,...
+  <?php if($listMenus->prev) echo Html::linkAction("index/$listMenus->prev/", '<< Anterior |') ?> 
+  <?php if($listMenus->next) echo Html::linkAction("index/$listMenus->next/", 'Proximo >>') ?> 
+</div>
+
