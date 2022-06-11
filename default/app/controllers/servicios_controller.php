@@ -1,5 +1,5 @@
 <?php
-
+// para autenticar al usuario
 class ServiciosController extends AppController {
 
         private function index () 

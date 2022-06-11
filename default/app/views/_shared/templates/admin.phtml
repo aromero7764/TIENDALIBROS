@@ -1,4 +1,5 @@
-
+<?php  //validacion de inicio de sesion
+        if(!Auth::is_valid()){ Redirect::to('login'); } ?>
 <!DOCTYPE html>
 <html lang="es">
  <head>

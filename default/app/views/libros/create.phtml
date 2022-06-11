@@ -1,9 +1,16 @@
-
 <div class="content">
 <?php View::content() ?>
-<h3>Crear menu<h3>
+<h3>Insertar un Libro en la Base de Datos<h3>
 
 <?= Form::open(); // por defecto llama a la misma url ?>
+
+<div class="field">
+  <label class="label">Nombre</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+  <p class="help">Coloque el nombre del Libro</p>
+</div>
         
         <label>Nombre
         <?= Form::text('menus.nombre') ?></label>
@@ -15,3 +22,6 @@
 
 <?= Form::close() ?>
 </div>
+
+
+ID	Nombre	Precio	Imagen

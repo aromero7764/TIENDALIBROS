@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset=<?= APP_CHARSET ?> >
+  <title>Tienda de Libros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php Tag::css('bulma.min') ?>
+  <?= Html::includeCss() ?>
+  
+</head>
+<header>
+
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+
+    <?= Html::link('inicio', Html::img('logoLibreria.jpg', 'Logo de Libreria', 'width="100px" height="100px"'), 'title="Inicio"') ?>
+    </a>
+
+                <!-- Menu Burguer -->
+                <div class="navbar-burger" id="burguer">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+
+                    <div class="navbar-menu is-spaced" id="navMenu">
+                        
+                <div class="navbar-start">
+                    <!-- navbar items -->
+                    <a class="navbar-item" href="">Opcion 1</a>
+                    <a class="navbar-item" href="">Opcion 2</a>
+                    <a class="navbar-item" href="">Opcion 3</a>
+                </div>
+
+                <div class="navbar-end">
+                    <!-- navbar items -->
+                    <a href="">Opcion 4</a>
+                    <a href="">Opcion 5</a>
+                    <a href="">Opcion 6</a>
+                </div>
+                </div>
+
+
+
+                </div>
+
+                <!-- Fin Menu Burguer -->
+
+    </div>
+
+<!-- JS para el burguer -->
+  <?= Tag::js('menu'); ?>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="<?= PUBLIC_PATH . 'inicio' ?>">
+        Pagina Principal
+      </a>
+
+      <a class="navbar-item">
+        Tienda Virtual
+      </a>
+
+      <!-- Cuddro de Busqueda -->
+      <a class="navbar-item">
+      <div class=" level-item">
+      <div class="field has-addons">
+        <p class="control">
+          <input class="input" type="text" placeholder="Buscar un Libro">
+        </p>
+        <p class="control">
+          <button class="button">
+            Busqueda
+          </button>
+        </p>
+      </div>
+    </div>
+      </a>
+ <!-- fin del cuadro de busqueda -->
+
+    
+    <div class="navbar is-light">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="<?= PUBLIC_PATH . 'login' ?>" >
+            <strong>Iniciar Sesión</strong>
+          </a>
+          
+          <a class="button is-light">
+            Registrarse
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</header>
+<body>
+
+
+
+
+ <?php View::content() ?>
+  <?php View::partial('kumbia/footer') ?>
+
+
+</body>
+</html>

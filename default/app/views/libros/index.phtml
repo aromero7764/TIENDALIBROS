@@ -26,10 +26,9 @@
                     <th><?= $item->price; ?></th>
                     <th><?= $item->imagen; ?></th>
                     <th>
-                        <button class="button small is-danger is-light"  type="submit" value="Editar">Editar</button>
+                        <?= Html::linkAction("edit/$item->id/", 'Editar', 'class="button small is-danger is-light"') ?> 
                         <input class="button small is-primary is-light" type="reset" value="Eliminar"> 
                     </th>
-                    
                 </tr>
                 <?php endforeach ?>
             </tbody>
@@ -40,19 +39,9 @@
 
 <div class="content">
   <?php View::content() ?> 
-  <h3>Menús</h3>
-  <ul>
-  <?php foreach($listLibros->items as $item) : ?> 
-  <li>
+
       <?= Html::linkAction("edit/$item->id/", 'Editar') ?> 
       <?= Html::linkAction("del/$item->id/", 'Borrar') ?> 
-      <strong><?= $item->nombrelib ?> - <?= $item->price ?></strong>
-  </li>
-  <?php endforeach ?>
-  </ul>
-  
-   // ejemplo manual de paginado, existen partials listos en formato digg, clasic,...
-  <?php if($listMenus->prev) echo Html::linkAction("index/$listMenus->prev/", '<< Anterior |') ?> 
-  <?php if($listMenus->next) echo Html::linkAction("index/$listMenus->next/", 'Proximo >>') ?> 
-</div>
+      
+
 
